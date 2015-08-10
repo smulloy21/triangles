@@ -6,7 +6,7 @@ class Triangle
   end
 
   define_method(:triangle?) do
-    if @side1 + @side2 > @side3 && @side2 + @side3 > @side1 && @side3 + @side1 > @side2
+    if (@side1 + @side2 > @side3) && (@side2 + @side3 > @side1) && (@side3 + @side1 > @side2)
       true
     else
       false
@@ -16,14 +16,14 @@ class Triangle
   define_method(:triangle_type) do
     if triangle?()
       if @side1 == @side2 && @side1 == @side3
-        output = "equilateral"
+        output = "equilateral."
       elsif @side1 == @side2 || @side2 == @side3 || @side1 == @side3
-        output = "isosceles"
+        output = "isosceles."
       else
-        output = "scalene"
+        output = "scalene."
       end
     else
-      output = "Not a triangle."
+      output = "not a triangle."
     end
   end
 end
